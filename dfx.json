@@ -1,13 +1,13 @@
 {
   "canisters": {
-    "message_board": {
+    "ICP_DAO": {
       "main": "src/index.ts",
       "type": "custom",
-      "build": "npx azle message_board",
+      "build": "npx azle ICP_DAO",
       "root": "src",
       "ts": "src/index.ts",
       "candid": "src/index.did",
-      "wasm": ".azle/message_board/message_board.wasm.gz"
+      "wasm": ".azle/ICP_DAO/ICP_DAO.wasm.gz"
     }
   }
 }
