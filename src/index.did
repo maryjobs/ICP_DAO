@@ -1,0 +1,23 @@
+type Proposal = record {
+  id : text;
+  noVotes : float64;
+  title : text;
+  updated_at : opt nat64;
+  owner : principal;
+  yesVotes : float64;
+  description : text;
+  voters : vec text;
+  created_at : nat64;
+};
+type ProposalPayload = record { title : text; description : text };
+type _AzleResult = variant { Ok : Proposal; Err : text };
+type _AzleResult_1 = variant { Ok : vec Proposal; Err : text };
+service : () -> {
+  createProposal : (ProposalPayload) -> (_AzleResult);
+  deleteProposal : (text, principal) -> (_AzleResult);
+  getProposal : (text) -> (_AzleResult) query;
+  getProposals : () -> (_AzleResult_1) query;
+  updateProposal : (text, ProposalPayload) -> (_AzleResult);
+  voteNo : (text) -> (_AzleResult);
+  voteYes : (text) -> (_AzleResult);
+}
